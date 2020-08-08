@@ -22,6 +22,10 @@ class ShaderProgram {
     getAttributeLocation(gl: WebGL2RenderingContext, name: string): number {
         return gl.getAttribLocation(this.programId, name);
     }
+
+    getUniformLocation(gl: WebGL2RenderingContext, name: string): WebGLUniformLocation {
+        return gl.getUniformLocation(this.programId, name);
+    }
     
     bind(gl: WebGL2RenderingContext): void {
         gl.useProgram(this.programId);
